@@ -14,7 +14,16 @@ export default function ContactBook2() {
     const removeContact = (index) => {
         setContacts(contacts.filter((_, i) => i !== index));
     };
- 
+    const Toggleview = (id) => {
+        const updatedContacts = contacts.map((y) => {
+            if (y.id === id) {
+                return { ...y, isViewing: !y.isViewing };
+            }
+            return y;
+        });
+        setContacts(updatedContacts);
+    };
+
 
 
 return (
